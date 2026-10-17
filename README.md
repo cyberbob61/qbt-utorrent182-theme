@@ -6,6 +6,10 @@ a category panel without section captions, and µTorrent's column order. qBittor
 
 Tested with qBittorrent 5.2.4 x64 on Windows 11.
 
+![qBittorrent with this theme](docs/screenshot.png)
+
+*Demo profile; all torrent names are fictional.*
+
 ## What is in here
 
 | File | What it does |
