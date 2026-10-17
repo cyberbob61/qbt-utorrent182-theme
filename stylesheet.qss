@@ -1,0 +1,56 @@
+/* uTorrent 1.8.2 look for qBittorrent 5.x. Meant for the "windowsvista" style, light color scheme.
+   Kept small on purpose: anything not styled here stays native Win32, like uTorrent itself. */
+
+QMenuBar { background: #ffffff; padding: 0; }
+QMenuBar::item { padding: 0px 6px; }
+
+/* flat white toolbar with small 16px icons, buttons packed tight like uTorrent */
+QToolBar { background: #ffffff; border: none; spacing: 0px; padding: 0px 2px; qproperty-iconSize: 16px 16px; }
+QToolBar QToolButton { border: 1px solid transparent; padding: 0px; margin: 0px; max-height: 18px; }
+/* the filter box and "Filter by" combo set the toolbar height; keep them no taller than the icons */
+QToolBar QLineEdit { border: 1px solid #a0a0a0; padding: 0px 2px; min-height: 0px; max-height: 16px; }
+QToolBar QComboBox { border: 1px solid #a0a0a0; padding: 0px 2px; min-height: 0px; max-height: 16px; }
+QToolBar QToolButton:hover { background: #e5f3ff; border-color: #cce8ff; }
+QToolBar QToolButton:pressed, QToolBar QToolButton:checked { background: #cce8ff; border-color: #99d1ff; }
+QToolBar::separator { background: #c8c8c8; width: 1px; margin: 3px 4px; }
+
+/* top-level Transfers / RSS / Search tabs */
+QTabBar::tab { padding: 3px 8px; }
+
+/* left category list: plain white panel with a thin frame */
+TransferListFiltersWidget { background: #ffffff; border: 1px solid #828790; }
+TransferListFiltersWidget QScrollArea, TransferListFiltersWidget QScrollArea > QWidget > QWidget { background: #ffffff; }
+/* uTorrent has no STATUS / CATEGORIES captions, just a gray line between groups.
+   Hiding the captions also makes collapsed groups (Tags, Trackers) unreachable; re-enable them in qBittorrent.ini [TransferListFilters]. */
+TransferListFiltersWidget QCheckBox { max-height: 0px; min-height: 0px; margin: 0; padding: 0; border: none; }
+/* compact rows in the left lists (the torrent list itself has a row-height floor in qBittorrent's code) */
+TransferListFiltersWidget QListView::item, TransferListFiltersWidget QTreeView::item { height: 17px; }
+BaseFilterWidget, StatusFilterWidget, CategoryFilterWidget, TagFilterWidget, TrackersFilterWidget { background: #ffffff; border: none; border-bottom: 1px solid #a0a0a0; margin-bottom: 6px; }
+
+/* uTorrent 1.8.2 does not scale list icons with Windows DPI: they stay 16 physical px.
+   9px here = 16 physical px at 175% scaling; use 16px for 100%, 12px for 125%, 11px for 150%.
+   Only the main window lists: dialogs (Options etc.) keep qBittorrent's normal icon size. */
+TransferListWidget, TransferListFiltersWidget QAbstractItemView { qproperty-iconSize: 9px 9px; }
+TransferListWidget::item, TransferListFiltersWidget QAbstractItemView::item { padding: 0px 1px; }
+
+/* list selection like a classic Win32 ListView: solid blue when focused, gray otherwise, no hover tint */
+QAbstractItemView::item:selected:active { background: #0078d7; color: #ffffff; }
+QAbstractItemView::item:selected:!active { background: #d9d9d9; color: #000000; }
+QAbstractItemView::item:hover:!selected { background: transparent; }
+
+/* Done column: thin framed bar like uTorrent instead of a full-height block (also used by list progress cells) */
+QProgressBar { border: 1px solid #b4b4b4; background: #ffffff; color: #000000; text-align: center; margin: 2px 2px; }
+QProgressBar::chunk { background: #50c050; }
+
+/* torrent list */
+TransferListWidget { border: 1px solid #828790; }
+QHeaderView::section { background: #ffffff; border: none; border-right: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5; padding: 2px 5px; }
+QHeaderView::section:hover { background: #d9ebf9; }
+
+/* detail tabs at the bottom (General, Trackers, Peers ...) drawn as a tab strip */
+PropertiesWidget QPushButton { background: transparent; border: 1px solid transparent; border-right-color: #d9d9d9; padding: 2px 7px 3px; min-height: 18px; }
+PropertiesWidget QPushButton:hover { background: #e5f3ff; }
+PropertiesWidget QPushButton:pressed { background: #ffffff; border: 1px solid #d9d9d9; border-bottom-color: #ffffff; }
+
+/* status bar */
+QStatusBar { background: #f0f0f0; border-top: 1px solid #d7d7d7; }
