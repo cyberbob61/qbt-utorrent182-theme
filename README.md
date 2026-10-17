@@ -2,7 +2,7 @@
 
 A UI theme for the **qBittorrent 5.x desktop app** (Windows) that makes it look like the classic µTorrent 1.8.2:
 light Win32 look, compact menu and toolbar, thin "Done" progress bars, black list text, solid blue selection,
-a category panel without section captions, and µTorrent's column order.
+a category panel without section captions, and µTorrent's column order. qBittorrent's own icons are kept.
 
 Tested with qBittorrent 5.2.4 x64 on Windows 11.
 
@@ -13,7 +13,6 @@ Tested with qBittorrent 5.2.4 x64 on Windows 11.
 | `config.json` | Light palette and colors (black list text, pieces bar, progress bar) |
 | `stylesheet.qss` | Compact menu/toolbar/rows, thin progress bars, tab strip, captionless filter panel |
 | `tools/apply-settings.js` | Sets the qBittorrent options the theme depends on, including the column order |
-| `icons/` | **Not included**, see [Icons](#icons) |
 
 ## Install
 
@@ -37,20 +36,6 @@ Tested with qBittorrent 5.2.4 x64 on Windows 11.
 4. Start qBittorrent.
 
 To undo: in Options → Behavior untick "Use custom UI Theme" and pick your old style, or restore the `.bak-*` ini copy.
-
-## Icons
-
-µTorrent's icons belong to BitTorrent, Inc., so they are not in this repository. Without icons the theme still works
-and qBittorrent shows its own icons.
-
-To use your own, put PNG files (any size, 32×32 recommended) into `icons/`, named after the qBittorrent icon ids:
-
-| Where | Icon ids |
-| --- | --- |
-| Toolbar | `list-add`, `insert-link`, `list-remove`, `torrent-start`, `torrent-stop`, `go-top`, `go-up`, `go-down`, `go-bottom`, `torrent-creator`, `configure` |
-| Torrent states / status filters | `downloading`, `stalledDL`, `upload`, `stalledUP`, `stopped`, `checked-completed`, `force-recheck`, `queued`, `error`, `filter-all`, `filter-active`, `filter-inactive`, `filter-stalled` |
-| Detail tabs | `help-about` (General), `trackers`, `peers`, `network-server` (HTTP Sources), `directory` (Content), `chart-line` (Speed) |
-| Categories | `view-categories` (a transparent PNG gives µTorrent's icon-less labels) |
 
 ## Notes and limits
 
